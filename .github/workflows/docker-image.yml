@@ -17,5 +17,5 @@ jobs:
     - name: Build and Push the Docker image
       run: |
         echo "${{ secrets.DOCKER_LOGIN_PWD }}" | docker login -u "saiprasad720" --password-stdin
-        docker build . --file Dockerfile --tag python-django-app:$(date +%s)
+        docker image build -t saiprasad720/python-django .
         docker push saiprasad720/python-django
